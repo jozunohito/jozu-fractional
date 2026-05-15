@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jeff Aragon, Fractional Head of Sales</title>
+<meta name="description" content="Jeff Aragon, Fractional Head of Sales. Founding Sales Team Builder for B2B SaaS startups scaling from less than $1MM ARR through $10MM+ ARR.">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0e17;
+    --panel: rgba(255,255,255,0.025);
+    --panel-border: rgba(255,255,255,0.06);
+    --accent: #6366f1;
+    --accent-dim: rgba(99,102,241,0.15);
+    --slate: #94a3b8;
+    --white: #ffffff;
+    --bright: #e2e8f0;
+    --gray: #cbd5e1;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--gray);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12pt;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+  }
+  h1, h2, h3 { font-family: 'Poppins', sans-serif; color: var(--white); letter-spacing: -0.015em; }
+  a { color: var(--accent); text-decoration: none; transition: opacity 0.15s; }
+  a:hover { opacity: 0.75; }
+  .page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 72px 56px;
+    width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 48px;
+    align-items: start;
+  }
+  .page::before {
+    content: '';
+    position: absolute;
+    top: 52px; left: 56px;
+    width: 36px; height: 3px;
+    background: var(--accent);
+    border-radius: 2px;
+  }
+  .photo-col { position: sticky; top: 72px; }
+  .photo {
+    width: 220px; height: 220px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid var(--panel-border);
+    box-shadow: 0 0 0 6px rgba(99,102,241,0.08);
+  }
+  .name { font-size: 36pt; font-weight: 600; color: var(--white); line-height: 1.05; margin-top: 22px; margin-bottom: 8px; }
+  .title { font-family: 'Poppins', sans-serif; font-size: 13pt; color: var(--slate); font-weight: 400; margin-bottom: 36px; }
+  .lede { font-size: 13pt; color: var(--bright); line-height: 1.7; margin-bottom: 22px; }
+  .lede strong { color: var(--white); font-weight: 600; }
+  .numbers {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-left: 2px solid var(--accent);
+    padding: 18px 22px;
+    border-radius: 6px;
+    margin: 28px 0 36px;
+  }
+  .numbers p { font-size: 11pt; color: var(--bright); margin-bottom: 8px; }
+  .numbers p:last-child { margin-bottom: 0; }
+  .numbers .num { color: var(--white); font-weight: 600; font-family: 'Poppins', sans-serif; }
+  .nowrap { white-space: nowrap; }
+  .section { margin-top: 44px; padding-top: 32px; border-top: 1px solid var(--panel-border); }
+  .section h2 { font-size: 16pt; font-weight: 600; color: var(--white); margin-bottom: 6px; }
+  .section .eyebrow { font-family: 'Poppins', sans-serif; font-size: 9.5pt; color: var(--accent); text-transform: uppercase; letter-spacing: 0.12em; font-weight: 500; margin-bottom: 6px; }
+  .section p { font-size: 12pt; color: var(--bright); line-height: 1.7; margin-bottom: 16px; }
+  .section p strong { color: var(--white); font-weight: 600; }
+  .lineage {
+    background: var(--panel);
+    border: 1px solid var(--panel-border);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 18px 0;
+    font-size: 11pt;
+  }
+  .lineage-item { display: flex; gap: 12px; padding: 6px 0; color: var(--gray); }
+  .lineage-item .yr { color: var(--slate); font-family: 'Poppins', sans-serif; font-weight: 500; min-width: 64px; font-size: 10pt; }
+  .lineage-item .what { color: var(--bright); }
+  .lineage-item .what strong { color: var(--white); font-weight: 600; }
+  .links { display: flex; flex-wrap: wrap; gap: 10px 14px; margin-top: 28px; }
+  .links a { display: inline-block; padding: 10px 18px; border: 1px solid var(--panel-border); background: var(--panel); border-radius: 6px; font-family: 'Poppins', sans-serif; font-size: 10.5pt; color: var(--bright); letter-spacing: 0.01em; transition: border-color 0.15s, background 0.15s; }
+  .links a:hover { border-color: var(--accent); background: var(--accent-dim); opacity: 1; }
+  .links a.primary { background: var(--accent-dim); border-color: var(--accent); color: var(--white); }
+  .contact { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--panel-border); font-size: 10.5pt; color: var(--slate); font-family: 'Poppins', sans-serif; letter-spacing: 0.02em; }
+  .contact a { margin-right: 18px; }
+  @media (max-width: 820px) {
+    .page { grid-template-columns: 1fr; gap: 36px; padding: 60px 32px; }
+    .page::before { left: 32px; }
+    .photo-col { position: static; }
+    .photo { width: 160px; height: 160px; }
+    .name { font-size: 28pt; }
+  }
+</style>
+</head>
+<body>
+  <main class="page">
+    <div class="photo-col">
+      <img class="photo" src="jeff-headshot.jpg" alt="Jeff Aragon">
+    </div>
+
+    <div class="content">
+      <h1 class="name">Jeff Aragon</h1>
+      <div class="title">Fractional Head of Sales. Founding Sales Team Builder for B2B SaaS Startups.</div>
+
+      <p class="lede">I am hired by founders to build <strong>founding Sales teams in support of a founder-led sales motion</strong>, scaling early-stage B2B SaaS startups from <strong>less than $1MM ARR through $10MM+ ARR</strong>. Mid-market and enterprise SaaS, ACVs $50K to $1M+. Twenty-five years of US enterprise sales, $150M+ in attributed career revenue, eleven years personally coaching AEs. Hourly fractional engagements, tracking my hours, not retainer or commission. USA-based.</p>
+
+      <div class="numbers">
+        <p><span class="num">$24M+</span> in TCV produced by the dedicated cross-functional pod I built and led at Ushur over two years, scaling <span class="nowrap">Series A</span> through <span class="nowrap">Series C</span>.</p>
+        <p><span class="num">130%</span> of full annual quota attained within Q1 of my second fiscal year at Ushur. Top 1% globally in quota attainment.</p>
+        <p><span class="num">150%+</span> average quota attainment across 5.5 years at Kronos and UKG, against ADP reselling the identical software.</p>
+        <p><span class="num">11 years</span> as a Professional Sales Process Coach. Personally coached AEs through structured live sessions, deal-call reviews, role-play, weekly cadence.</p>
+        <p><span class="num">$150M+</span> in attributed career revenue across 25 years of US enterprise sales.</p>
+      </div>
+
+      <section class="section" id="methodology">
+        <div class="eyebrow">Where the discipline came from</div>
+        <h2>The Kronos sales operating system, and what I do with it now</h2>
+        <p>Kronos CEO <strong>Aron Ain</strong> installed a precision sales operating system that hardened through the 1990s and 2000s under his leadership. It was not a training program. It was an organizational design choice. Every quota-carrying rep was developed to sell the buyer's economic consequences back to the buyer, in writing, before forecast. The methodology compounded for two decades and is the reason UKG, the successor entity, continues to win the largest health-system procurements against vendors with more modern feature stacks.</p>
+        <p>I sold inside that system for 5.5 years. I authored Plan Letters that produced enterprise wins against IBM, Oracle, SAP, Lawson, and the API Healthcare lineage. I now codify and install the same operating system inside other revenue organizations as my fractional practice.</p>
+        <p><strong>The canonical methodology stack I install at client engagements:</strong></p>
+        <div class="lineage">
+          <div class="lineage-item"><span class="yr">Foundation</span><span class="what"><strong>Plan Letter discipline</strong>. No Plan Letter, no forecast.</span></div>
+          <div class="lineage-item"><span class="yr">Buyer voice</span><span class="what"><strong>Power Message in the Value Wedge</strong>. Buyer's economic mechanic, where competitors cannot credibly match.</span></div>
+          <div class="lineage-item"><span class="yr">Deal mechanic</span><span class="what"><strong>Mutual Sequence of Events</strong>. Buyer-confirmed sequence in writing.</span></div>
+          <div class="lineage-item"><span class="yr">Sourcing</span><span class="what"><strong>Trigger Signal capture</strong>. Buying-process readiness identified at signal layer.</span></div>
+          <div class="lineage-item"><span class="yr">Forecast</span><span class="what"><strong>Forecast Gates and Pipeline Discipline</strong>. Deals enter forecast only when gated criteria are met.</span></div>
+          <div class="lineage-item"><span class="yr">Quarterly</span><span class="what"><strong>Customer Value Reviews</strong>. Validate realized value vs commitment.</span></div>
+          <div class="lineage-item"><span class="yr">Team</span><span class="what"><strong>Founding AE scorecard</strong> and <strong>structured live AE coaching</strong>. Weekly cadence.</span></div>
+        </div>
+        <p>The full architecture sits in the Jozu GTM deck below.</p>
+      </section>
+
+      <div class="links">
+        <a class="primary" href="case-studies/">Case Studies</a>
+        <a href="gtm-architecture/" target="_blank" rel="noopener">Jozu GTM Architecture</a>
+        <a href="resume/jeff-aragon-resume.pdf" target="_blank" rel="noopener">Resume (PDF)</a>
+        <a href="https://www.linkedin.com/in/jeffreyaragon" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+
+      <div class="contact">
+        <a href="mailto:jeff@jozuconsultinggroup.com">jeff@jozuconsultinggroup.com</a>
+        <a href="tel:+13036381390">303-638-1390</a>
+      </div>
+    </div>
+  </main>
+</body>
+</html>
